@@ -1,0 +1,41 @@
+﻿@using RunGroopWebApp.Data.Enum
+@using RunGroopWebApp.ViewModels;
+@model Race
+
+<form method="post" asp-action="Delete">
+  <input type="hidden" id="AppUserId" name="AppUserId" asp-for="AppUserId" disabled/>
+    <div class="form-group">
+        <label asp-for="Title">Title</label>
+        <input class="form-control" asp-for="Title" value="@Model.Title" disabled>
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input class="form-control" asp-for="Description" placeholder="Description"disabled>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RaceCategory">RaceCategory</label>
+        <input class="form-control" asp-for="RaceCategory" value="@Model.RaceCategory" disabled />
+        <span asp-validation-for="RaceCategory" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address.Street">Street</label>
+        <input class="form-control" asp-for="Address.Street" value="@Model.Address.Street" disabled>
+        <span asp-validation-for="Address.Street" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address.City">City</label>
+        <input class="form-control" asp-for="Address.City" value="@Model.Address.City" disabled>
+        <span asp-validation-for="Address.City" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address.State">State</label>
+        <input class="form-control" asp-for="Address.State" value="@Model.Address.State" disabled>
+        <span asp-validation-for="Address.State" class="text-danger"></span>
+    </div>
+    <div class="form-group my-4">
+        <img src="@Model.Image" width="225" height="225"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Delete</button>
+</form>
